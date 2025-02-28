@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management System</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Inventory MS</h2>
+        <a onclick="showPage('dashboard')">Dashboard</a>
+        <a onclick="showPage('category')">Category</a>
+        <a onclick="showPage('products')">Products</a>
+        <a onclick="showPage('orders')">Orders</a>
+        <a onclick="showPage('suppliers')">Suppliers</a>
+        <a onclick="showPage('analytics')">Analytics</a>
+    </div>
+    <div class="content">
+        <div id="dashboard" class="page">
+            <h1>Dashboard</h1>
+            <div style="display: flex; gap: 20px;">
+                <div class="chart-container">
+                    <h2>Total Sales</h2>
+                    <canvas id="salesChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h2>Profit & Loss</h2>
+                    <canvas id="profitLossChart"></canvas>
+                </div>
+            </div>
+            <div class="low-stock-container">
+                <h2>Low Stock Products</h2>
+                <table id="lowStockTable">
+                    <thead>
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Quantity</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+        <div id="category" class="page hidden">
+            <h1>Category Page</h1>
+        </div>
+        <div id="products" class="page hidden">
+            <h1>Products Page</h1>
+            <div>
+                <input type="text" id="productName" placeholder="Enter product name">
+                <input type="number" id="productQuantity" placeholder="Enter quantity">
+                <button onclick="addProduct()">Add Product</button>
+            </div>
+            <div>
+                <h3>Available Products</h3>
+                <ul id="productList"></ul>
+            </div>
+        </div>
+        <div id="orders" class="page hidden">
+            <h1>Orders Page</h1>
+        </div>
+        <div id="suppliers" class="page hidden">
+            <h1>Suppliers Page</h1>
+        </div>
+        <div id="analytics" class="page hidden">
+            <h1>Analytics Page</h1>
+        </div>
+    </div>
+    <script src="script.js"></script>
+   
+</body>
+</html>
